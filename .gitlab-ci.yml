@@ -1,0 +1,29 @@
+image: maven:3.5.4
+
+stages:
+  - build
+  - test
+
+build:
+  stage: build
+  script:
+    - mvn compile
+
+test:
+  stage: test
+  script:
+    - mvn clean verify "-Dcucumber.options= --tags @smokes-ui"
+  
+  after_script:
+    - rm -rf /var/lib/apt/lists/*
+    - apt-get update
+    - apt-cache gencaches
+    - apt-get install -y zip unzip
+    - zip -r serenity_report.zip ./target/site/serenity
+
+  artifacts:
+    when: always
+    expire_in: 1 week
+    paths:
+      - ./serenity_report.zip
+    

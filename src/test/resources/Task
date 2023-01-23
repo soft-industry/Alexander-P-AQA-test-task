@@ -1,0 +1,14 @@
+Requirements (obligatory):
+• Refactor the given project
+• Make it run correctly on Gitlab CI
+• Use BDD format: Cucumber/Gherkin
+• Required framework: Java Serenity + Maven
+You need to:
+• Automate the endpoints inside a working CI/CD pipeline to test the service
+• Cleanup the project and implement it in the proper way
+• Cover at least 1 positive and 1 negative scenario
+• Write instructions in Readme file on how to install, run and write new tests
+• Briefly write in Readme what was refactored and why
+• Upload your project to Gitlab and make sure that CI/CD is configured
+• Set Html reporting tool with the test results of the pipeline test run
+• IMPORTANT!!! Provide us with a Gitlab link to your repository
